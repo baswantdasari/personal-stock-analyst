@@ -9,26 +9,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @Entity
 @Table(name = "stock_user_details")
-public class UserDetails implements Serializable{
-	
+public class UserDetails implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private Integer id;
-	
+
 	@Column(name = "username", nullable = false)
 	private String userName;
-	
+
 	@Column(name = "firstname", nullable = false)
 	private String firstName;
-	
+
 	@Column(name = "lastname", nullable = false)
 	private String lastName;
 

@@ -16,6 +16,9 @@ import com.personal.stock.api.model.Stock;
 import com.personal.stock.api.service.PersonalStockService;
 import com.personal.stock.api.service.RegistrationLoginService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping("/stock")
 public class PersonalStockController {
@@ -25,8 +28,6 @@ public class PersonalStockController {
 
 	@Autowired
 	RegistrationLoginService registrationLoginService;
-
-	private static final Logger log = LoggerFactory.getLogger(PersonalStockController.class);
 
 	@CrossOrigin(origins = "*")
 	@GetMapping(path = "/api", produces = "application/json")
